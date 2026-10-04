@@ -1,39 +1,27 @@
 {
   "name": "mmdalam",
-  "version": "0.0.2",
-  "description": "mmdalam",
-  "main": "server.js",
-  "author": "MohammadAlamzade",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Personal website of Mohammad Alemzadeh — Senior Back-End Developer & Technical Team Lead",
+  "author": "Mohammad Alemzadeh",
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit"
   },
-  "license": "ISC",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "dependencies": {
-    "app-module-path": "^2.2.0",
-    "auto-bind-inheritance": "^1.0.6",
-    "bcrypt": "^5.1.0",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.4.6",
-    "cookie-session": "^2.0.0",
-    "csrf": "^3.1.0",
-    "csurf": "^1.11.0",
-    "dotenv": "^16.3.1",
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "express-ejs-layouts": "^2.5.1",
-    "express-session": "^1.17.3",
-    "express-validator": "^7.0.1",
-    "helmet": "^7.0.0",
-    "i18n": "^0.15.1",
-    "jalali-moment": "^3.3.11",
-    "moment": "^2.30.1",
-    "mongoose": "^8.3.5",
-    "mongoose-paginate": "^5.0.3",
-    "passport-local": "^1.0.0",
-    "sweetalert2": "^11.7.12",
-    "useragent": "^2.3.0"
+    "next": "^16.3.8",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5.9.3"
   }
 }
