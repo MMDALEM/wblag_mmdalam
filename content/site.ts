@@ -1,11 +1,23 @@
 // Shared, language-independent details used across both locales.
 
+// Accepts "mmdalam.ir", "https://mmdalam.ir/" etc. and returns a clean origin, or null if unusable.
+function normalizeUrl(value: string | undefined) {
+  const trimmed = value?.trim();
+  if (!trimmed) return null;
+  const withProtocol = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+  try {
+    return new URL(withProtocol).origin;
+  } catch {
+    return null;
+  }
+}
+
 function resolveSiteUrl() {
-  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
-  if (explicit) return explicit.replace(/\/$/, "");
-  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
-  if (vercel) return `https://${vercel}`;
-  return "http://localhost:3000";
+  return (
+    normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
+    normalizeUrl(process.env.VERCEL_PROJECT_PRODUCTION_URL) ??
+    "http://localhost:3000"
+  );
 }
 
 export const site = {

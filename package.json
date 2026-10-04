@@ -11,7 +11,7 @@
     "lint": "tsc --noEmit"
   },
   "engines": {
-    "node": ">=20.9.0"
+    "node": "24.x"
   },
   "dependencies": {
     "next": "^16.3.8",
